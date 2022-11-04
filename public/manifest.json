@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "minimum_chrome_version": "88.0",
+  "name": "chrome pagination extensions",
+  "short_name": "pagination",
+  "description": "方向键快速翻页插件",
+  "version": "1.0.0",
+  "icons": {
+    "16": "icons/active.png",
+    "48": "icons/active.png",
+    "128": "icons/active.png"
+  },
+  "permissions": [
+    "scripting",
+    "storage"
+  ],
+  "homepage_url": "https://github.com/zxpzdtom",
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content_scripts.js"
+      ]
+    }
+  ],
+  "action": {},
+  "background": {
+    "service_worker": "background.js"
+  }
+}
