@@ -41,7 +41,7 @@ async function handleKeydown(e: KeyboardEvent) {
   // 在搜索输入框按左右键不做任何处理
   if (document.activeElement?.nodeName === 'INPUT') return
   // 判断是否为开启状态
-  const active = await getItem(pkg.name)
+  const active = await getItem(pkg.name) ?? true
   if (!active) return
   if (e.key === 'ArrowLeft') { // 下一页
     forNode(document.body)
